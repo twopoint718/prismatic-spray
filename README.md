@@ -10,3 +10,9 @@ Named after the D&D spell by the same name.
   </a>
   <figcaption>A wizard casting the Prismatic Spray spell</figcaption>
 </figure>
+
+## Prototype
+
+![Prototype photo](img/IMG_0859.JPG)
+
+Short video: https://twitter.com/twopoint718/status/1552858497666240512
