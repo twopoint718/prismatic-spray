@@ -1,10 +1,9 @@
-"""Example for Pico. Turns on the built-in LED."""
+import analogio
 import board
 import digitalio
 import math
 import neopixel
 import time
-
 
 led = digitalio.DigitalInOut(board.LED)
 led.direction = digitalio.Direction.OUTPUT
@@ -12,12 +11,17 @@ led.direction = digitalio.Direction.OUTPUT
 button = digitalio.DigitalInOut(board.GP14)
 button.switch_to_input(pull=digitalio.Pull.DOWN)
 
+hueInput = analogio.AnalogIn(board.GP27_A1)
+
 # NeoPixel (WS2812)
 num_pixels = 1
 
 pixel = neopixel.NeoPixel(board.GP16, num_pixels)
 pixel.brightness = 0.3
 print(pixel)
+
+def getHue(pin):
+    return pin.value / 65535.0 * 360
 
 def hToRGB(H, S=1, L=0.5):
     C = 1
@@ -41,10 +45,13 @@ def hToRGB(H, S=1, L=0.5):
     return (int(r * 255), int(g * 255), int(b * 255))
 
 h = 0
+print("Starting")
 while True:
-    h = h + 1
-    if h > 360:
-        h = 0
-    rgb = hToRGB(h)
-    pixel.fill(rgb)
+    h = getHue(hueInput)
+    if button.value:
+        rgb = hToRGB(h)
+        pixel.fill(rgb)
+    else:
+        pixel.fill((0,0,0))
+    pixel.show()
     time.sleep(0.1)
