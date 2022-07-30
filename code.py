@@ -1,27 +1,21 @@
-import analogio
-import board
-import digitalio
+from machine import ADC, Pin
 import math
 import neopixel
 import time
 
-led = digitalio.DigitalInOut(board.LED)
-led.direction = digitalio.Direction.OUTPUT
+button = Pin(14, Pin.IN, Pin.PULL_DOWN)
 
-button = digitalio.DigitalInOut(board.GP14)
-button.switch_to_input(pull=digitalio.Pull.DOWN)
-
-hueInput = analogio.AnalogIn(board.GP27_A1)
+# Pin: 32, ADC1, GP27
+hueInput = ADC(Pin(27))
 
 # NeoPixel (WS2812)
 num_pixels = 1
-
-pixel = neopixel.NeoPixel(board.GP16, num_pixels)
+# Pin: 21, GP16
+pixel = neopixel.NeoPixel(Pin(16), num_pixels)
 pixel.brightness = 0.3
-print(pixel)
 
 def getHue(pin):
-    return pin.value / 65535.0 * 360
+    return pin.read_u16() / 65535 * 360
 
 def hToRGB(H, S=1, L=0.5):
     C = 1
@@ -45,13 +39,12 @@ def hToRGB(H, S=1, L=0.5):
     return (int(r * 255), int(g * 255), int(b * 255))
 
 h = 0
-print("Starting")
 while True:
     h = getHue(hueInput)
-    if button.value:
+    if button.value() == 1:
         rgb = hToRGB(h)
         pixel.fill(rgb)
     else:
         pixel.fill((0,0,0))
-    pixel.show()
+    pixel.write()
     time.sleep(0.1)
