@@ -16,3 +16,7 @@ Named after the D&D spell by the same name.
 ![Prototype photo](img/IMG_0859.JPG)
 
 Short video: https://twitter.com/twopoint718/status/1552858497666240512
+
+## Resources
+
+- https://gitlab.com/kicad/libraries/kicad-footprints/-/tree/master/Button_Switch_Keyboard.pretty
