@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name "MCU_RaspberryPi_and_Boards")(type "KiCad")(uri "C:/Users/Chris/source/repos/prismatic-spray/hardware/libraries/RP-Pico Libraries/MCU_RaspberryPi_and_Boards.pretty")(options "")(descr ""))
+  (lib (name "Footprints")(type "KiCad")(uri "${KIPRJMOD}/../libraries/Footprints.pretty")(options "")(descr ""))
 )
