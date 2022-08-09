@@ -1524,7 +1524,7 @@
     (property "Value" "R_Potentiometer" (id 1) (at 175.26 82.5499 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Potentiometer_THT:Potentiometer_ACP_CA6-H2,5_Horizontal" (id 2) (at 172.72 81.28 0)
+    (property "Footprint" "Footprints:p160_potentiometer" (id 2) (at 172.72 81.28 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 172.72 81.28 0)
@@ -1710,7 +1710,7 @@
       (reference "J2") (unit 1) (value "Conn_01x03_Male") (footprint "Connector_JST:JST_PH_S3B-PH-K_1x03_P2.00mm_Horizontal")
     )
     (path "/a68e407d-6968-4aa7-87a0-1d07ad018cf1"
-      (reference "RV1") (unit 1) (value "R_Potentiometer") (footprint "Potentiometer_THT:Potentiometer_ACP_CA6-H2,5_Horizontal")
+      (reference "RV1") (unit 1) (value "R_Potentiometer") (footprint "Footprints:p160_potentiometer")
     )
     (path "/a293ebe0-b0f7-4a89-b394-4a5c694aa469"
       (reference "SW1") (unit 1) (value "SW_Push") (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB")

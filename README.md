@@ -23,5 +23,6 @@ Short video: https://twitter.com/twopoint718/status/1552858497666240512
 
 ## Resources
 
-- https://gitlab.com/kicad/libraries/kicad-footprints/-/tree/master/Button_Switch_Keyboard.pretty
-- https://cdn-shop.adafruit.com/datasheets/pec11.pdf
+- Cherry MX key switch https://gitlab.com/kicad/libraries/kicad-footprints/-/tree/master/Button_Switch_Keyboard.pretty
+- Rotary encoder https://cdn-shop.adafruit.com/datasheets/pec11.pdf
+- Potentiometer https://cdn-shop.adafruit.com/datasheets/p160.pdf
