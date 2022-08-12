@@ -1,23 +1,50 @@
 from machine import ADC, Pin
 import math
+import micropython
 import neopixel
 import time
+import utime
+micropython.alloc_emergency_exception_buf(100)
 
+################################################################################
+# States
+
+class State():
+    IDLE = 0
+    BUTTON_UP = 1
+    BUTTON_DOWN = 2
+    FAILURE = 3
+
+# initial global state
+state = State.IDLE
+
+################################################################################
+# Configure I/O Pins & Globals
+
+# Pin: 19, GP14
 button = Pin(14, Pin.IN, Pin.PULL_DOWN)
 
 # Pin: 32, ADC1, GP27
 hueInput = ADC(Pin(27))
 
+# Pin: 25, on-board LED
+onboard_led = Pin(25, Pin.OUT)
+
 # NeoPixel (WS2812)
 num_pixels = 1
 # Pin: 21, GP16
+pin = Pin(16, Pin.OUT)
 pixel = neopixel.NeoPixel(Pin(16), num_pixels)
-pixel.brightness = 0.3
+pixel.fill((0, 0, 0))
+pixel.write()
 
-def getHue(pin):
-    return pin.read_u16() / 65535 * 360
+################################################################################
+# Function defs
 
-def hToRGB(H, S=1, L=0.5):
+def getHue(p):
+    return p.read_u16() / 65535 * 360
+
+def hsl2rgb(H, S=1, L=0.5):
     C = 1
     X = 1 - math.fabs((H / 60.0) % 2 - 1)
     m = L - C/2.0
@@ -38,13 +65,39 @@ def hToRGB(H, S=1, L=0.5):
         r, g, b = (C, 0, X)
     return (int(r * 255), int(g * 255), int(b * 255))
 
-h = 0
+def toggleLed():
+    pass
+
+toggle = True
+def onButtonPress(pin):
+    global state
+    if state == State.IDLE:
+        state = State.BUTTON_DOWN
+        return
+    if state == State.BUTTON_DOWN:
+        state = State.BUTTON_UP
+        return
+
+################################################################################
+# Main
+
+# Setup
+button.irq(handler=onButtonPress, trigger=(Pin.IRQ_RISING or Pin.IRQ_FALLING))
+
 while True:
-    h = getHue(hueInput)
-    if button.value() == 1:
-        rgb = hToRGB(h)
+    if state == State.IDLE:
+        # Enter lower-power mode when there's nothing to do 
+        machine.idle()
+    elif state == State.BUTTON_DOWN:
+        rgb = hsl2rgb(getHue(hueInput))
         pixel.fill(rgb)
+        pixel.write()
+        utime.sleep(0.1)
+    elif state == State.BUTTON_UP:
+        pixel.fill((0, 0, 0))
+        pixel.write()
+        state = State.IDLE
     else:
-        pixel.fill((0,0,0))
-    pixel.write()
-    time.sleep(0.1)
+        # Turn on LED to signal possible problem
+        onboard_led.value(1)
+
