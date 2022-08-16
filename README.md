@@ -20,6 +20,8 @@ Short video: https://twitter.com/twopoint718/status/1552858497666240512
 ## PCB
 
 ![PCB Rendering](img/prismatic-spray.png)
+- TODO: split pcb into two files for main and daughter board
+- measure height of knobs for case lid clearance
 
 ## Resources
 
