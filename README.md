@@ -1,4 +1,4 @@
-# Prismatic Spray
+# Prismatic Spray 🌈
 
 Designing a handheld RGB widget for light painting.
 Named after the D&D spell by the same name.
