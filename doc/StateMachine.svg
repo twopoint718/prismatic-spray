@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="214px" preserveAspectRatio="none" style="width:750px;height:214px;background:#FFFFFF;" version="1.1" viewBox="0 0 750 214" width="750px" zoomAndPan="magnify"><defs/><g><g id="LedOn"><rect fill="#F1F1F1" height="72.8281" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="231" x="7" y="7"/><line style="stroke:#181818;stroke-width:0.5;" x1="7" x2="238" y1="34.6094" y2="34.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="91.5" y="26.5332">LedOn(N)</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="12" y="54.1426">onEntry / bsp.led_on(n, currHue)</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="12" y="71.752">onExit / bsp.led_off(n)</text></g><ellipse cx="305.5" cy="43.5" fill="#222222" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><g id="Idle"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="50" x="169.5" y="158"/><line style="stroke:#181818;stroke-width:0.5;" x1="169.5" x2="219.5" y1="185.6094" y2="185.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="183.5" y="177.5332">Idle</text></g><!--MD5=[38f1f8b7f214ff6bc6d4b705f682283d]
+link *start to Idle--><g id="link_*start_Idle"><path d="M300.08,52.56 C289.77,67.73 266.41,101.39 244.5,128 C237.38,136.65 229.27,145.7 221.69,153.87 " fill="none" id="*start-to-Idle" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="218.02,157.81,227.0856,153.961,221.4321,154.1552,221.2379,148.5017,218.02,157.81" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="260.5" y="124.4951">bsp.init()</text></g><!--MD5=[a46792362b94762a275a8147cc60a729]
+link Idle to LedOn--><g id="link_Idle_LedOn"><path d="M181.76,157.67 C171.22,137.54 156.03,108.52 143.66,84.91 " fill="none" id="Idle-to-LedOn" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="141.23,80.27,141.8533,90.0991,143.5458,84.7014,148.9435,86.3939,141.23,80.27" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="166.5" y="124.4951">BtnDown(N)</text></g><!--MD5=[2c15217f908186639c41f500692abd17]
+link LedOn to Idle--><g id="link_LedOn_Idle"><path d="M98.21,80.11 C90.87,95.51 86.79,113.33 95.5,128 C110.34,152.99 141.25,167.16 164.61,174.65 " fill="none" id="LedOn-to-Idle" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="169.47,176.15,162.043,169.6817,164.6908,174.6806,159.6919,177.3284,169.47,176.15" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="96.5" y="124.4951">BtnUp(N)</text></g><!--MD5=[4f7116d012c72546cb0d8b5f1cb34cc3]
+link Idle to Idle--><g id="link_Idle_Idle"><path d="M219.78,179.39 C237.27,178.3 254.5,179.5 254.5,183 C254.5,186.14 240.59,187.44 225.08,186.87 " fill="none" id="Idle-to-Idle" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="219.78,186.61,228.5747,191.0431,224.7741,186.8533,228.964,183.0526,219.78,186.61" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="128" x="260.5" y="188.4951">IncHue / currHue += 1</text></g><!--MD5=[4f7116d012c72546cb0d8b5f1cb34cc3]
+link Idle to Idle--><g id="link_Idle_Idle"><path d="M219.77,178.61 C276.87,172.62 394.5,174.08 394.5,183 C394.5,191.66 283.66,193.29 224.94,187.9 " fill="none" id="Idle-to-Idle-1" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="219.77,187.39,228.3384,192.2462,224.7463,187.8762,229.1163,184.2841,219.77,187.39" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="130" x="400.5" y="188.4951">DecHue / currHue -= 1</text></g><!--MD5=[4f7116d012c72546cb0d8b5f1cb34cc3]
+link Idle to Idle--><g id="link_Idle_Idle"><path d="M219.64,178 C304.25,167.22 536.5,168.89 536.5,183 C536.5,196.83 313.23,198.71 224.77,188.62 " fill="none" id="Idle-to-Idle-2" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="219.64,188,228.0959,193.0496,224.604,188.5991,229.0544,185.1072,219.64,188" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="195" x="542.5" y="188.4951">AdjBrite /currBrite = analogRead()</text></g><!--MD5=[84637c92dac44e339941570142973a8c]
+@startuml StateMachine
+state LedOn as "LedOn(N)" : onEntry / bsp.led_on(n, currHue) \nonExit / bsp.led_off(n)
+
+[*] - -> Idle : bsp.init()
+Idle - -> LedOn : BtnDown(N)
+LedOn - -> Idle : BtnUp(N)
+
+Idle - -> Idle : IncHue / currHue += 1
+Idle - -> Idle : DecHue / currHue -= 1
+Idle - -> Idle : AdjBrite /currBrite = analogRead()
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 12:01:30 CDT 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

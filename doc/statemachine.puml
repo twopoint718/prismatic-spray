@@ -1,0 +1,11 @@
+@startuml StateMachine
+state LedOn as "LedOn(N)" : onEntry / bsp.led_on(n, currHue) \nonExit / bsp.led_off(n)
+
+[*] --> Idle : bsp.init()
+Idle --> LedOn : BtnDown(N)
+LedOn --> Idle : BtnUp(N)
+
+Idle --> Idle : IncHue / currHue += 1
+Idle --> Idle : DecHue / currHue -= 1
+Idle --> Idle : AdjBrite /currBrite = analogRead()
+@enduml
