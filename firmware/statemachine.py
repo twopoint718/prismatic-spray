@@ -1,31 +1,29 @@
-# States
-IDLE = "IDLE"
-LED_0_ON = "LED_0_ON"
-LED_1_ON = "LED_1_ON"
-LED_2_ON = "LED_2_ON"
-LED_3_ON = "LED_3_ON"
+# Signals to be handled
+from enum import Enum
 
-HUE_ADJUST = "HUE_ADJUST"
+class Signal(Enum):
+    AdjustBrightness = 1
+    ButtonDown = 2
+    ButtonUp = 3
+    IncrementHue = 4
+    DecrementHue = 5
 
 class StateMachine:
     def __init__(self, bsp):
-        self.state = "INIT"
-        self.bsp
+        self.state = None
+        self.bsp = bsp
 
-    def run(self):
-        while True:
-            if self.state == IDLE:
-                # BSP() constructor handles init
-                pass
-            elif self.state == LED_0_ON:
-                self.bsp.led_on(0)
-            elif self.state == LED_1_ON:
-                self.bsp.led_on(1)
-            elif self.state == LED_2_ON:
-                self.bsp.led_on(2)
-            elif self.state == LED_3_ON:
-                self.bsp.led_on(3)
-            elif self.state == HUE_ADJUST:
-                pass
-            else:
-                pass
+    def transition(self, newState):
+        self.state = newState
+
+    # States are methods
+    def initial_state(self):
+        self.curr_hue = 0
+        self.curr_brightness = 1.0
+        self.transition(self.idle_state)
+
+    def idle_state(self):
+        pass
+
+    def led_on_state(self):
+        pass

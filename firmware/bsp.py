@@ -1,9 +1,7 @@
 from machine import ADC, Pin
-import math
 import micropython
 import neopixel
-import time
-import utime
+
 micropython.alloc_emergency_exception_buf(100)
 
 # 24 precomputed hues as RGB. Each value is 15 degrees (360/24) separated in
@@ -20,10 +18,6 @@ NUM_HUES = 24
 
 class BSP:
     def __init__(self):
-        """Configure I/O Pins & Globals"""
-        self.curr_hue = 0 # 360/24 = 15 degree increments
-        self.brightness = 0
-
         # Buttons
         self.button0 = Pin(14, Pin.IN, Pin.PULL_DOWN)
         # self.button1 = Pin(??, Pin.IN, Pin.PULL_DOWN) 
@@ -52,8 +46,8 @@ class BSP:
         if self.curr_hue < 0:
             self.curr_hue = NUM_HUES-1
         
-    def led_on(self, n):
-        self.pixel[n].fill(HUES[self.curr_hue])
+    def led_on(self, n, hue, brightness=1):
+        self.pixel[n].fill(HUES[hue])
         self.pixel[n].write()
 
     def led_off(self, n):
