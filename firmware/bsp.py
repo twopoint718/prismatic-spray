@@ -25,7 +25,7 @@ class BSP:
         # self.button3 = Pin(??, Pin.IN, Pin.PULL_DOWN) 
 
         # Pin: 32, ADC1, GP27
-        self.hueInput = ADC(Pin(27))
+        # self.hueInput = ADC(Pin(27))
 
         # Pin: 25, on-board LED
         self.onboard_led = Pin(25, Pin.OUT)
@@ -35,16 +35,6 @@ class BSP:
         # Pin: 21, GP16
         Pin(16, Pin.OUT)
         self.pixel = neopixel.NeoPixel(Pin(16), self.num_pixels)
-
-    def increment_hue(self):
-        self.curr_hue += 1
-        if self.curr_hue >= NUM_HUES:
-            self.curr_hue = 0
-
-    def decrement_hue(self):
-        self.curr_hue -= 1
-        if self.curr_hue < 0:
-            self.curr_hue = NUM_HUES-1
         
     def led_on(self, n, hue, brightness=1):
         self.pixel[n].fill(HUES[hue])
