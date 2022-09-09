@@ -1,6 +1,10 @@
 @startuml StateMachine
 
-[*] --> Active
+[*] --> Active : StateMachine()
+
+Active --> Active : IncHue
+Active --> Active : DecHue
+Active --> Active : AdjBright
 
 state Active {
   [*] -> Led0Off
