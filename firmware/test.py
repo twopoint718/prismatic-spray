@@ -8,7 +8,6 @@ class MockBSP():
         self.pixel = [(0,0,0), (0,0,0), (0,0,0), (0,0,0)]
     
     def led_on(self, n, hue, brightness=1):
-        print("LED_ON")
         self.pixel[n] = self.hues[hue]
 
     def led_off(self, n):
@@ -44,6 +43,16 @@ class TestState(unittest.TestCase):
         sut.dispatch(sm.DecrementHue(0))
         
         self.assertEqual(23, sut.get_focus())
+
+    def test_increment_wraparound(self):
+        bsp = MockBSP()
+        sut = sm.StateMachine(bsp)
+        for i in range(23):
+            sut.dispatch(sm.IncrementHue(0))
+        
+        self.assertEqual(23, sut.get_focus())
+        sut.dispatch(sm.IncrementHue(0))
+        self.assertEqual(0, sut.get_focus())
 
 if __name__ == '__main__':
     unittest.main()
