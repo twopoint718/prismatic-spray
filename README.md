@@ -43,9 +43,9 @@ Short video: https://twitter.com/twopoint718/status/1552858497666240512
 
 ## PCB
 
-![PCB Rendering](img/prismatic-spray.png)
+![PCB Rendering](img/prismatic-spray-render.png)
 - [x] split pcb into two files for main and daughter board
-- [ ] measure height of knobs for case lid clearance
+- [x] measure height of knobs for case lid clearance
 
 ## Resources
 
