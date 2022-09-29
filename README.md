@@ -51,4 +51,6 @@ Short video: https://twitter.com/twopoint718/status/1552858497666240512
 
 - Cherry MX key switch https://gitlab.com/kicad/libraries/kicad-footprints/-/tree/master/Button_Switch_Keyboard.pretty
 - Rotary encoder https://cdn-shop.adafruit.com/datasheets/pec11.pdf
+  - Knob https://cdn-shop.adafruit.com/datasheets/EPD-200732.pdf
 - Potentiometer https://cdn-shop.adafruit.com/datasheets/p160.pdf
+  - Knob https://cdn-shop.adafruit.com/product-files/5541/knob+drawing.jpg
