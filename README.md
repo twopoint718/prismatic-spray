@@ -1,5 +1,7 @@
 # Prismatic Spray 🌈
 
+[![License](https://img.shields.io/badge/License-CERN--OHL--P-blue.svg)](https://ohwr.org/cern_ohl_p_v2.txt) 
+
 Designing a handheld RGB widget for light painting.
 Named after the D&D spell by the same name.
 
