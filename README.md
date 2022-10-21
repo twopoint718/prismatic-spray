@@ -1,5 +1,7 @@
 # Prismatic Spray 🌈
 
+[![License](https://img.shields.io/badge/License-CERN--OHL--P-blue.svg)](https://ohwr.org/cern_ohl_p_v2.txt) 
+
 Designing a handheld RGB widget for light painting.
 Named after the D&D spell by the same name.
 
@@ -47,8 +49,11 @@ Short video: https://twitter.com/twopoint718/status/1552858497666240512
 - [x] split pcb into two files for main and daughter board
 - [x] measure height of knobs for case lid clearance
 
-## Resources
+## Resources/Parts Datasheets
 
 - Cherry MX key switch https://gitlab.com/kicad/libraries/kicad-footprints/-/tree/master/Button_Switch_Keyboard.pretty
 - Rotary encoder https://cdn-shop.adafruit.com/datasheets/pec11.pdf
+  - Knob https://cdn-shop.adafruit.com/datasheets/EPD-200732.pdf
 - Potentiometer https://cdn-shop.adafruit.com/datasheets/p160.pdf
+  - Knob https://cdn-shop.adafruit.com/product-files/5541/knob+drawing.jpg
+- Heat-set insert https://www.mcmaster.com/94180A321/
